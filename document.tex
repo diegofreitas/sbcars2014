@@ -359,8 +359,9 @@
 % author names and affiliations
 % use a multiple column layout for up to three different
 % affiliations
-\author{\IEEEauthorblockN{Diego Freitas}
-\IEEEauthorblockA{Fundação Paulo Feitoza (FPF Tech)\\
+\author{\IEEEauthorblockN{Diego L. Freitas}
+\IEEEauthorblockA{Departamento de Software e Hardware\\
+Fundação Desembargador Paulo Feitoza (FPF-Tech)\\
 Manaus, Brazil\\
 Email: diego.freitas@fpf.br}
 \and
@@ -462,7 +463,7 @@ por acesso a um banco de dados, comunicação com serviços externos, encapsular
 regras de negócios. Uma dessas camadas que constitui um aplicativo android é a
 camada de apresentação ou interface com o usuário.
  
-Segundo \citeonline{pressman}, ``A interface com o usuário pode ser considerada
+Segundo \cite{pressman}, ``A interface com o usuário pode ser considerada
 o elemento mais importante de um sistema ou produto baseado em computador``.
 Dada a importância da camada apresentação em um sistema, será tratado nesse
 trabalho o uso de padrões de projeto para desenvolvimento da camada de
@@ -518,11 +519,11 @@ O uso de um dispositivo móvel permite inovar ao usufrui-lo para atender
 necessidades tanto para computação pessoal e corporativa. Conforme a variedade
 de aplicativos surgem, o interesse em projeta-los com mais qualidade tambem
 aumenta. Existem estudos sobre arquitetura de aplicativos Android como
-demonstrado por \citeonline{BMVC}, onde é elaborado uma arquitetura baseada no
+demonstrado por \cite{BMVC}, onde é elaborado uma arquitetura baseada no
 padrão de projeto MVC que é extendida para as camadas do sistema que estão
 presentes em um serviço remoto para aproveitar as vantagens que a conectividade
 desses aparelhos oferencem. Outro trabalho relacionado é
-de \citeonline{corporateandroid} que desenvolvem um aplicativo dentro de um
+de \cite{corporateandroid} que desenvolvem um aplicativo dentro de um
 contexto corporativo que é usado para consultar dados a partir de um banco de
 dados central.
 
@@ -532,29 +533,29 @@ aplica- ção do padrão em outros contextos e plataformas  \cite{presenterfirst
 \cite{yangmvp}. Esses trabalhos enfatizam que o MVP melhora a
 testabilidade, que é uma característica de qualidade de software.
 
-A principal referência presente neste trabalho é \citeonline{cksuite} que
+A principal referência presente neste trabalho é \cite{cksuite} que
 elaboram um conjunto de métricas para descrever de forma quantitativa a
-qualidade de software orientado a objetos. \citeonline{cksuite} aplicam um
+qualidade de software orientado a objetos. \cite{cksuite} aplicam um
 conjunto de seis métricas em dois projetos distintos desenvolvidos em Smalltak e
 C++ analisando a relação dos resultados obtidos e os fatores que influenciaram
 no desenvolvimento dos sistemas como por exemplo decisões arquiteturais e a
 qualidade dos sistemas. Essas métricas serão usadas para avaliar a qualidade do
 código resultante do processo de refatoração.
 
-As métricas \citeonline{cksuite} tem se demonstradas como uma forma de avaliar a
-qualidade de um sistema orientado a objetos. \citeonline{Dubey:2011} sumarizam
+As métricas \cite{cksuite} tem se demonstradas como uma forma de avaliar a
+qualidade de um sistema orientado a objetos. \cite{Dubey:2011} sumarizam
 uma série de estudos que mostram o aumento da manutenabilidade do código ao
 manter os valores das métricas baixos. Outras características de
 qualidade de software são verificadas por meio de métricas de código
-como demonstrado por \citeonline{Khalid:2010} que usa essas métricas para
+como demonstrado por \cite{Khalid:2010} que usa essas métricas para
 avaliar a complexidade e a testabilidade de sistema orientados a objetos.
-Segundo \citeonline{Briand:2000}, características como acoplamento, coesão e
+Segundo \cite{Briand:2000}, características como acoplamento, coesão e
 herança estão relacionados com uma probabilidade maior de ocorrer falhas, e
 avalia essa relação usando métricas para analisar a estrutura de projetos de
-software. \citeonline{CK:98} relacionam os resultados dessas métricas com a
+software. \cite{CK:98} relacionam os resultados dessas métricas com a
 produtividade, esforço de retrabalho e projeto.
 
-Na dissertação de \citeonline{turk} é feita uma análise dos impactos na
+Na dissertação de \cite{turk} é feita uma análise dos impactos na
 qualidade do código  ao aplicar cinco padrões de projetos em um software de comunicação
 TCP/IP. Os resultados do trabalho citado mostram que a qualidade do software
 aumenta ao aplicar padrões de projetos, sendo que o principal atributo de
@@ -583,7 +584,7 @@ Para validar a hipótese apresentada neste trabalho a pesquisa terá uma
 abordagem quantitativa por meio da análise de dados estatistícos de métricas 
 que expresssam atributos de qualidade em software orientado a objetos. O
 conjunto de métricas a serem usadas nessa validação será o elaborado por
-\citeonline{cksuite}.
+\cite{cksuite}.
 
 Essas medidas serão coletadas por meio de um procedimento experimental em
 laboratório utilizando um processo iterativo-incremental para executar
@@ -625,26 +626,26 @@ A Figura \ref{processo_experimentacao} demonstra as atividades do processo de
 experimentação adotado:
 \begin{figure}[!htb]
 	\begin{center}
-	\includegraphics[scale=0.35]{img/processo_experimentacao.png}
+	\includegraphics[scale=0.33]{img/processo_experimentacao.png}
 	\end{center}
 	
 	\caption{\label{processo_experimentacao} Processo de Experimentação}
 \end{figure}
 
 
-
-\textbf{Definir versão de referência} - Delimitar um marco do estado do código
-no repositório. \\
-\indent\textbf{Refatoração de funcionalidade} - Esta atividade tem como objetivo
-aplicar os padrões propostos em uma funcionalidade do aplicativo.\\
-\indent\textbf{Construir projeto} - Excutar o processo de construção do projeto
-que inclui a compilação das classes para fazer a coleta das métricas.\\
-\indent\textbf{Coleta de Métricas} - Este passo tem como objetivo fazer a coleta
+\begin{itemize}
+\item \textbf{Definir versão de referência} - Delimitar um marco do estado do
+código no repositório.
+\item \textbf{Refatoração de funcionalidade} - Esta atividade tem como
+objetivo aplicar os padrões propostos em uma funcionalidade do aplicativo.
+\item \textbf{Construir projeto} - Excutar o processo de construção do
+projeto que inclui a compilação das classes para fazer a coleta das métricas.
+\item \textbf{Coleta de Métricas} - Este passo tem como objetivo fazer a coleta
 das métricas do código que se encontra no repositório a partir de uma revisão
-para fazer a avaliação dos efeitos da refatoração na qualidade do código.\\
-\indent\textbf{Análise dos resultados} - Discussão dos impactos das alterações
-executadas nas métricas.\\
-
+para fazer a avaliação dos efeitos da refatoração na qualidade do código.
+\item \textbf{Análise dos resultados} - Discussão dos impactos das alterações
+executadas nas métricas.
+\end{itemize}
 
 
 \subsection{Organização do Trabalho}
@@ -700,16 +701,17 @@ sistema orientado a objeto \cite{gof}. Essa descrição envolve as motivações 
 a utilização daquele padrão, a estrutura de classes e objetos participantes do
 padrão e contextualização de sua aplicabilidade. Em desenvolvimento de software,
 o catálogo mais difundido de padrões de projetos orientado a objetos é elaborado
-por \citeonline{gof}, contendo um total de 23 padrões formalmente documentados
+por \cite{gof}, contendo um total de 23 padrões formalmente documentados
 que acumulam experiências bem sucedidas em diversos sistemas. Esses padrões têm
 a seguinte classificação:
 
-\begin{description}
-\item[Criacionais] Padrões que definem como criar novas instâncias de classes.
-\item[Estruturais] Foca na estruturação das classes e objetos.
-\item[Comportamentais] Definem como as classes e objetos interagem entre si e
-suas responsabilidades.
-\end{description}
+\begin{itemize}
+\item \textbf{Criacionais} - Padrões que definem como criar novas instâncias de
+classes.
+\item \textbf{Estruturais} -  Foca na estruturação das classes e objetos.\\
+\item \textbf{Comportamentais} - Definem como as classes e objetos interagem
+entre si e suas responsabilidades.
+\end{itemize}
 %argumentação
 Analisando a forma como um padrão de projeto é concebido, com uma definição
 dos papéis de cada elemento participante e como eles interagem entre si,
@@ -725,7 +727,7 @@ características contribuem para um software de melhor qualidade.
 \subsection{Métricas de qualidade OO}
 \label{sec:metrics}
 
-%A qualidade de software . Segundo \citeonline{pressman}, qualidade de software 
+%A qualidade de software . Segundo \cite{pressman}, qualidade de software 
 %Qualidade
 
 %Existem aspectos da qualidade de software que podem ser mensurados como
@@ -736,7 +738,7 @@ características contribuem para um software de melhor qualidade.
 
 Com o advento de novas técnicas de desenvolvimento de software é necessário
 obter informações do impacto dessas inovações nos resultados de um projeto. Com
-esse objetivo \citeonline{cksuite} criaram um conjunto de métricas para
+esse objetivo \cite{cksuite} criaram um conjunto de métricas para
 medir a qualidade de sistemas desenvolvidos usando o paradigma orientado a
 objetos que não se limitasse a uma linguagem de programação, fácil de coletar e
 com forte embasamento teórico na ontologia de Bunge que é um modelo usado pra
@@ -750,12 +752,10 @@ informação\cite{WandWeber}. As métricas são:
 
 
 
-\begin{description}
 
 
-
-\item[Response sets for Class (RFC)] Quantidade de métodos que são executados
-quando um objeto recebe uma mensagem, incluindo os métodos de outras classes. É
+\subsubsection{\textbf{Response sets for Class (RFC)}} Quantidade de métodos
+que são executados quando um objeto recebe uma mensagem, incluindo os métodos de outras classes. É
 levado em consideração somente os métodos que são chamados diretamente.
 
 \begin{figure}[htb]
@@ -773,12 +773,12 @@ o método ``MétodoW'' que é de outra classe referenciada pelo atributo
 ``MétodoC'' não contém chamadas a nenhum outro método, o valor da métrica RFC
 para a classe ilustrada é de seis métodos.
 
-\item[Wheighted Methods per Classe (WMC)] Serve para expressar o nível de
-complexidade de uma classe com base na soma da complexidade dos métodos que ela
+\subsubsection{\textbf{Wheighted Methods per Classe (WMC)}} Serve para expressar
+o nível de complexidade de uma classe com base na soma da complexidade dos métodos que ela
 possui. Isso afeta o esforço de manutenção da classe, além de impactar nas
 classes filhas que herdarão esses métodos. Também é um indicativo de que a
 classe tem métodos específicos dificultando o seu reuso. A unidade de
-complexidade definida por \citeonline{cksuite} é o próprio método e não
+complexidade definida por \cite{cksuite} é o próprio método e não
 considera outros fatores como número de linhas, número de parâmetros ou
 quantidade de estruturas de decisão. A figura~\ref{fig:pic_wmc} ilustra como a
 métrica WMC é avaliada em uma classe.
@@ -792,12 +792,12 @@ métrica WMC é avaliada em uma classe.
 \end{figure}
 
 No exemplo da figura~\ref{fig:pic_wmc}, a classe reprensentada tem um total de
-cinco métodos implementados. Seguindo estritamente o que \citeonline{cksuite}
+cinco métodos implementados. Seguindo estritamente o que \cite{cksuite}
 definem para a métrica, o valor da métrica WMC para a classe é cinco métodos.
 
 
-\item[Coupling Bettwen Objects (CBO)]  Em um sistema orientado a objetos,
-diversas classes são implementadas para exercer uma respoonsabilidade, as
+\subsubsection{\textbf{Coupling Bettwen Objects (CBO)}} Em um sistema orientado
+a objetos, diversas classes são implementadas para exercer uma respoonsabilidade, as
 instâncias dessa classes interagem entre si para atingir o objetivo do sistema.
 Uma classe está acoplada a outra quando o método de um classe invoca o método de
 uma variável de instância de outra classe que gera uma dependência entre essas
@@ -810,7 +810,7 @@ depende.
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.8]{img/pic_cbo.png}
+		\includegraphics[scale=0.6]{img/pic_cbo.png}
 	\end{center}
 	\caption{\label{fig:pic_cbo}Exemplo de avaliação da métrica CBO}
 	
@@ -822,7 +822,7 @@ valor de CBO para a classe ``A" é a somas de todas as suas
 dependências, neste caso totalizando três dependências.
 
 
-\item[Depth Inheritance Tree (DIT)] Nível de uma classe na
+\subsubsection{\textbf{Depth Inheritance Tree (DIT)}}  Nível de uma classe na
 hierarquia de herança. Reflete o número máximo de nós  dentro da árvore
 de classes até a raiz, o que aumenta a complexidade conforme a quantidade de
 elementos envolvidos se eleva, diminuindo a previsibilidade do comportamento da
@@ -835,16 +835,16 @@ valor da métrica DIT para a classe ``ClasseZ'' é dois.
 
 
 \begin{figure}[htb]
-	\caption{\label{fig:pic_dit}Exemplo de avaliação da métrica DIT}
 	\begin{center}
 		\includegraphics[scale=0.6]{img/pic_dit.png}
 	\end{center}
+	\caption{\label{fig:pic_dit}Exemplo de avaliação da métrica DIT}
 	
 \end{figure}
 
 
-\item[Lack of Cohesion in Methods (LCOM)] Usado para avaliar a coesão de uma
-classe por meio dos relacionamentos entre seus atributos e métodos.
+\subsubsection{\textbf{Lack of Cohesion in Methods (LCOM)}} Usado para avaliar a
+coesão de uma classe por meio dos relacionamentos entre seus atributos e métodos.
 O valor dessa métrica é fornecido por meio da quantidade de métodos que não tem
 nenhum atributo em comum, menos a quantidade de métodos que tem atributos em
 comum.
@@ -901,8 +901,8 @@ Totalizando dois conjuntos vazios e um conjunto não vazio. Portanto o valor da
 métrica LCOM para a classe ``ClasseB'' é de um conjunto. Podemos concluir que a
 classe ``ClasseB'' é mais coesa que  a classe ``ClasseA''.
 
-\item[Number of Children (NOC)] Número de subclasses imediatas de uma
-classe analisada. Essa medida é um indicativo de mau uso de herança conforme seu
+\subsubsection{\textbf{Number of Children (NOC)}} Número de subclasses imediatas
+de uma classe analisada. Essa medida é um indicativo de mau uso de herança conforme seu
 valor aumenta e mostra o impacto que uma classe pode ter no sistema requerendo maior
 atenção e testes.
 
@@ -918,25 +918,24 @@ Na figura \ref{fig:pic_noc} a classe ``ClasseA'' e a classe ``ClasseT'' são as
 únicas classes que tem uma relação de herança direta com a classe ``Raiz'',
 portanto o valor da métrica NOC para a classe ``Raiz'' é  dois.
 
-\end{description}
 
 Todas essas métricas tem uma relação inerente com a coesão e acoplamento dos
 objetos, sendo uma forma confiável para a análise da qualidade em sistemas
 orientados a objetos. Os aplicativos desenvolvidos para a plataforma android são
 escritos usando a linguagem de programação Java que emprega esse paradigma de
-desenvolvimento, o que justifica o uso das métricas de \citeonline{cksuite} para
+desenvolvimento, o que justifica o uso das métricas de \cite{cksuite} para
 validação dos projetos orientados a objetos.
 
 \subsection{Model View Controller}
 
 O padrão \textit{Model View Controller} surgiu como uma solução genérica para
 que usuários de um sistema de planejamento manipulem dados complexos
-\citeonline{Reenskaug:1979}. Posteriormente, \citeonline{krasnerPope1988}
+\cite{Reenskaug:1979}. Posteriormente, \cite{krasnerPope1988}
 implementam um framework MVC para o ambiente gráfico da linguagem de programação
 Smalltalk-80 como uma forma de promover a reusabilidade e plugabilidade dos
 componentes de um sistema.
 
-Segundo \citeonline{Reenskaug:1979} o principal objetivo do MVC
+Segundo \cite{Reenskaug:1979} o principal objetivo do MVC
 ``\ldots é representar o modelo mental do usuário de um espaço de informações
 relevantes e permitir que o usuário inspecione e altere estas
 informações.''(tradução livre).
@@ -961,8 +960,8 @@ entrada(Teclado, Mouse) alterando estado da view ou do model.
 
 
 
-\citeonline{krasnerPope1988} descrevem a estrutura do MVC onde a view tem seu
-controller exclusivo mantendo uma dependência cíclica entre ambos. Tanto a View
+krasner and Pope \cite{krasnerPope1988} descrevem a estrutura do MVC onde a view
+tem seu controller exclusivo mantendo uma dependência cíclica entre ambos. Tanto a View
 quanto o Controller tem referências diretas para o model por meio de atributos
 de classe, porém, o model não deve conhecer seus respectivos pares de
 View-Controller para promover maior reuso de código e encapsulamento do model.
@@ -973,7 +972,7 @@ pares de View-Controller as mensagens de notificação de um novo estado do mode
 podem ser parametrizadas assim cada view pode verificar se a alteração é de seu
 interesse. 
 
-Segundo \citeonline{Fowler:2002:PEA} ``\ldots esta separação da
+Segundo \cite{Fowler:2002:PEA} ``\ldots esta separação da
 apresentação e modelo é uma das mais fundamentais heurísticas de bom projeto
 de software''(tradução livre).
 O controller poderia ser o responsável por publicar as alterações no estado do
@@ -990,13 +989,13 @@ extender. A Figura \ref{mvc} esclarece a interação entre os componentes.
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.5]{img/mvc.png}
+		\includegraphics[scale=0.45]{img/mvc.png}
 	\end{center}
 	
 	\caption{\label{mvc}Representação dos componentes do MVC}
 \end{figure}
 
-\citeonline{gof} cita \citeonline{krasnerPope1988} fazendo uma análise dos
+\cite{gof} cita \cite{krasnerPope1988} fazendo uma análise dos
 objetos que compõem o MVC relacionando-os com outros padrões de projeto
 descritos em seu catálogo.
 O desacoplamento entre a View e o Model, somado à propagação das mudanças de
@@ -1004,7 +1003,7 @@ estado no model para a View e o Controller podem ser
 descritos como uma implementação do padrão Observer. Segundo \cite{gof} o padrão
 Observer ``\ldots Define uma dependência de 1-N entre objetos para quando um
 objeto mudar de estado, todos os seus dependentes são notificados e atualizados
-automaticamente''(tradução livre). \citeonline{krasnerPope1988} descrevem essa
+automaticamente''(tradução livre). \cite{krasnerPope1988} descrevem essa
 estrutura com o conceito de Dependents onde a View e o Controller são
 registrados como dependentes do model. O padrão Observer é composto por uma
 estrutura em que um objeto precisa publicar mudanças em seu estado, detém a
@@ -1014,7 +1013,7 @@ dada uma modificação no Model.
 
 A View é composta por vários objetos com a responsabilidade em comum de
 representar parte ou todo o estado do Model. Este é um exemplo do padrão de
-projeto Composite. Segundo \citeonline{gof} o padrão Composite ``\ldots
+projeto Composite. Segundo \cite{gof} o padrão Composite ``\ldots
 Integra objetos em uma estrutura de árvore para representar uma hierárquia
 parte-todo, deixando clientes tratar objetos individuais e composições de
 objetos uniformemente''(tradução livre).Uma view pode ser constituída por
@@ -1022,7 +1021,7 @@ sub-views para compor Views complexas. No Composite  um conjunto de componentes
 visuais podem ser tratadas de forma encapsulada onde cada um implementa a
 mesma abstração. 
 
-Segundo \citeonline{gof} o padrão de projeto Strategy ``\ldots define uma
+Segundo \cite{gof} o padrão de projeto Strategy ``\ldots define uma
 família de algorítmos, encapsula cada um, e torna-os substituíveis entre si
 permitindo que variem independentemente dos clientes que o usam''(tradução
 livre). O padrão Strategy define uma abstração cuja as implementações podem ser
@@ -1031,7 +1030,7 @@ Controller que encapsula o algoritmo que vai alterar a View e o Model,
 permitindo sua substituíção, por exemplo, por uma outra implementação que deixa
 de responder às interações com o usuário.
 
-Segundo \citeonline{krasnerPope1988} o Model ``\ldots pode ser simples como
+Segundo \cite{krasnerPope1988} o Model ``\ldots pode ser simples como
 um valor numério inteiro (como o modelo de um contador) ou um valor literal
 (como o modelo de um editor de texto), ou pode ser um objeto complexo''(tradução
 livre). O Model pode ser implementado usando o padrão Facade para simplificar
@@ -1050,24 +1049,25 @@ e como o usuário interage com esses dados, tendo como objetivo promover o
 encapsulamento do Model , reuso de lógica de negócio e o polimorfismo da View.
 São Eles:
 
-\begin{description}
-  \item[Model] Tem as mesmas responsabilidades que o Model definido pelo MVC.
-  \item[Selections] - Abstração para selecionar um subconjunto dos dados
-  existentes no model.
-  \item [Commands] Representa as operações a serem executadas sobre uma
-  Selection do Model.
-  \item [View] Responsável por exibir o model assim como no MVC.
-  \item [Interactor] Mapeia os interações do usuário na view como eventos do
-  mouse.
-  \item [Presenter] O papel do presenter é interpretar o eventos iniciados pelo
-  usuário executando a lógica de negócio correspondente implementada em um
+\begin{itemize}
+\item \textbf{Model} - Tem as mesmas responsabilidades que o Model definido
+pelo MVC.
+\item \textbf{Selections} - Abstração para selecionar um subconjunto dos
+dados existentes no model.
+\item \textbf{Commands} - Representa as operações a serem executadas sobre
+uma Selection do Model.
+\item \textbf{View} - Responsável por exibir o model assim como no MVC.
+\item \textbf{Interactor} - Mapeia os interações do usuário na view como
+eventos do mouse.
+\item \textbf{Presenter} - O papel do presenter é interpretar o eventos
+iniciados pelo usuário executando a lógica de negócio correspondente implementada em um
   command para manipular o model \cite{Potel96mvp}.
-\end{description}
+\end{itemize}
 
 
-Os conceitos do MVP são descritos em \citeonline{Potel96mvp} de forma genérica
+Os conceitos do MVP são descritos em \cite{Potel96mvp} de forma genérica
 permitindo interpretações para uma implementação efetiva.
-\citeonline{twisttriad:2000} descrevem a implementação de um framework para
+\cite{twisttriad:2000} descrevem a implementação de um framework para
 Dolphin Smalltalk\footnote{Implementação da Linguagem de programação Smalltalk - 
 \url{http://www.object-arts.com}} adotando os conceitos do MVP onde salienta que
 a maioria dos sistemas operacionais com ambiente gráfico fornece um conjunto de
@@ -1076,7 +1076,7 @@ Controller, de acordo com a descrição do padrão MVC. A maior parte do
 comportamento com o usuário é implementada no Presenter que está
 diretamente associado à View.
 
-Ainda acerca das responsabilidades do Presenter, \citeonline{fowler:ui} descreve
+Ainda acerca das responsabilidades do Presenter, \cite{fowler:ui} descreve
 o que é chamado de Passive View, onde toda a lógica do comportamento da view é
 implementado no presenter deixando a view enxuta com o intuito de isolar ao
 máximo a API gráfica do resto da aplicação. Dessa forma o model não se comunica
@@ -1085,13 +1085,13 @@ pelo presenter como pode ser observado na Figura~\ref{fig:mvp_passive_view}.
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.5]{img/passive_view.png}
+		\includegraphics[scale=0.45]{img/passive_view.png}
 	\end{center}
 	\caption{\label{fig:mvp_passive_view} MVP - Passive View}
 	
 \end{figure}
 
-Outra variação do MVP descrita por \citeonline{fowler:sp} é o Supevising
+Outra variação do MVP descrita por \cite{fowler:sp} é o Supevising
 Controller. Nesta abordagem o Model utiliza algum mecanismo de notificação, por
 exemplo o padrão Observer, para atualizar a View. Este comportamente é parecido
 com o do padrão MVC como pode pode ser observado na
@@ -1099,7 +1099,7 @@ figura~\ref{fig:sup_controller}.
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.5]{img/supervising_controller.png}
+		\includegraphics[scale=0.45]{img/supervising_controller.png}
 	\end{center}
 	
 	\caption{\label{fig:sup_controller} MVP - Supervising Controller}
@@ -1130,25 +1130,28 @@ aplicativos básicos. %como é demonstrado na figura \ref{android_stack}.
 Para desenvolvimento é usada a API disponível no SDK que define
 os blocos de construção de um aplicativo, a saber:
 
-\begin{description}
-  \item[Activity] Representa uma atividade que o usuário executa no aplicativo
-  em um determinado momento. É um agregador de componentes visuais e responde à
+\begin{itemize}
+  \item \textbf{Activity} - Representa uma atividade que o usuário executa no
+  aplicativo em um determinado momento. É um agregador de componentes visuais e responde à
   interações do usuário.
-  \item[Fragment] Representa uma parte de interface com o usuário em uma
-  Activity.
-  \item[Service] Responsável por executar uma operação sem interface gráfica
-  indicado para processamentos longos como por exemplo a execução de uma música
+  \item \textbf{Fragment} - Representa uma parte de interface com o usuário
+  em uma Activity.
+  \item \textbf{Service} -  Responsável por executar uma operação sem interface
+  gráfica indicado para processamentos longos como por exemplo a execução de uma música
   ou download de de arquivos.
-  \item[Broadcast Receiver] Implementação do padrão publish/subscribe 
-  \item[Content Provider] Usado para expor dados de uma aplicativo para outros
-  aplicativos. Os dados podem ser provenientes de qualquer forma de
+  \item \textbf{Broadcast Receiver} - Implementação do padrão
+  publish/subscribe.
+  \item \textbf{Content Provider} - Usado para expor dados de
+  uma aplicativo para outros aplicativos. Os dados podem ser provenientes de qualquer forma de
   armazenamento como um arquivo ou banco de dados.
-  \item[ApplicationContext] Representa a aplicação em execução provendo acesso
-  a recursos.
-  \item[AsyncTask] Usado para facilitar o uso de Threads evitando o uso
-  da linha de execução principal do aplicativo que é respoonsável por tratar a
+  \item \textbf{ApplicationContext} - Representa a aplicação em execução
+  provendo acesso a recursos.
+  \item \textbf{AsyncTask} - Usado para facilitar o uso de Threads evitando o
+  uso da linha de execução principal do aplicativo que é respoonsável por tratar a
   interações com o usuário.
-\end{description}
+  
+\end{itemize}
+
 
 Com base nos componentes de framework e literatura revisada é possível fazer
 uma análise dos mesmos e projetar uma camada de apresentação utilizando o padrão
@@ -1250,12 +1253,14 @@ são ilustradas nas figuras \ref{fig:contacts_groups},
 
 
 As classes a serem refatoradas são:
-\begin{description}
-\item[GroupDetailFragment.java] Exibe os dados de um grupo de contatos.
-\item[GroupBrowseListFragment.java] Fornece uma lista de grupos.
-\item[GroupEditorFragment.java] Disponibiliza um formulário para edição dos
-dados de um grupo.
-\end{description}
+
+\begin{itemize}
+\item \textbf{GroupDetailFragment.java} -  Exibe os dados de um grupo de
+contatos.
+\item \textbf{GroupBrowseListFragment.java} - Fornece uma lista de grupos.
+\item \textbf{GroupEditorFragment.java} - Disponibiliza um formulário para
+edição dos dados de um grupo.
+\end{itemize}
 
 Essas classes estão presentes no pacote \textbf{com.android.contacts.group} como
 mostra a figura \ref{fig:classes_group_baseline}.
@@ -1319,7 +1324,7 @@ componente que a interface com o usuário é construída. A classe Activity forn
 vários métodos para recuperação de recursos de imagens, textos, inicialização de
 serviços, entre outros. Isso ocorre porque a classe Activity é uma subclasse de Context, herdando diversos métodos não relacionados ao gerenciamento da interface.
 
-Segundo \citeonline{Reenskaug:1979} ``\ldots Os papéis da View e do
+Segundo \cite{Reenskaug:1979} ``\ldots Os papéis da View e do
 Controller podem ser exercidos pelo mesmo objeto quando eles estão muito
 acoplados. Exemplo: Um Menu.''(tradução livre). Porém, isso requer um boa
 análise do problema em questão para decidir o nível de granularidade que esses componentes podem ter.
@@ -1567,7 +1572,7 @@ métodos aumentaram e isso se refletiu na métrica RFC.
 
 \subsubsection{LCOM}
 
-Segundo \citeonline{cksuite} ``Um valor alto de LCOM indica uma disparidade na
+Segundo \cite{cksuite} ``Um valor alto de LCOM indica uma disparidade na
 funcionalidade provida pela classe.". Analisando a relação entre os métodos da
 classe e seus atributos é possível dizer se a classe tem muitas
 responsabilidades e é necessário dividi-la em duas ou mais classes. Esta métrica
@@ -1675,7 +1680,7 @@ métrica LCOM que foi a mais afetada pelo uso do padrão MVP no projeto como pod
 ser observado na figura \ref{fig:allmetrics}.
 
 \begin{figure}[htb]
-	\includegraphics[scale=0.6]{img/allmetrics}
+	\includegraphics[scale=0.55]{img/allmetrics}
 	\caption{\label{fig:allmetrics} Variação das métricas ao longo das iterações}
 \end{figure}
 
@@ -1713,7 +1718,7 @@ possam ser reutilizados em outras partes do aplicativo. O uso da classe
 Fragment foi mantido e parte das implementações presentes nessas classes foram
 delegadas para as classes de Presenter correspondentes.
 
-As métricas descritas por \citeonline{cksuite} foram usadas para avaliar os
+As métricas descritas por \cite{cksuite} foram usadas para avaliar os
 impactos na qualidade do aplicativo após a refatoração usanddo o padrão MVP. Foi
 usado o projeto CKJM para coletar os dados para fazer a análise.
 
