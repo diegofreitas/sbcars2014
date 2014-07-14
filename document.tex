@@ -366,9 +366,9 @@ Manaus, Brazil\\
 Email: diego.freitas@fpf.br}
 \and
 \IEEEauthorblockN{Danny Lopes}
-\IEEEauthorblockA{Faculdade Fucapi\\
+\IEEEauthorblockA{FUCAPI - Departamento de Tecnologia\\
 Manaus, Brazil\\
-Email: dannylopes@fucapi.br}
+Email: danny.lopes@fucapi.br}
 }
 
 % conference papers do not typically use \thanks and this command
@@ -465,55 +465,107 @@ camada de apresentação ou interface com o usuário.
  
 Segundo \cite{pressman}, ``A interface com o usuário pode ser considerada
 o elemento mais importante de um sistema ou produto baseado em computador``.
-Dada a importância da camada apresentação em um sistema, será tratado nesse
-trabalho o uso de padrões de projeto para desenvolvimento da camada de
-apresentação de aplicativos android.
+Dada a importância da camada de apresentação, este trabalho se concentra no uso
+de uso de padrões de projeto para desenvolvimento da camada de apresentação de aplicativos android.
 
-\subsection{Motivação}
-
-O autor deste trabalho atua em projetos de desenvolvimento de aplicativos android em uma instituição de
-pesquisa e desenvolvimento localizada em Manaus. O comprometimento com a
-qualidade promoveu o uso de ferramentas de código aberto para monitoração da
-qualidade dos projetos, além do processo de testes adotado pela empresa. Com uma
-equipe composta por mais de 30 desenvolvedores produzindo aplicativos com
-diversas finalidades, houve a necessidades de padronização da arquitetura.
-
-\subsection{Problematização}
 Dado que existem uma vasta diversidade de padrões de projeto a serem aplicados
 no desenvolvimento de software, qual padrão de projeto é aplicável para o
 desenvolvimento da camada de apresentação de aplicativos android para melhorar a
-qualidade do produto final?
-
-\subsection{Hipótese}
-
-O padrão de projeto Model-View-Presenter é aplicável no desenvolvimento da
-camada de apresentação de aplicativos android, gerando um aumento da qualidade
-do produto final.
-
-\subsection{Objetivos}
-
-Este trabalho fará um estudo sobre a arquitetura de aplicativos android com o
+qualidade do produto final?. Tendo esta questão como como hipótese, este
+trabalho apresenta um estudo sobre a arquitetura de aplicativos android com o
 propósito de melhorar a qualidade desses softwares, causando uma redução nos
 riscos relacionados às mudanças que acontecem durante o ciclo de desenvolvimento
-e promovendo a reutilização de componentes,  além de permitir o incremento de funcionalidades com
-baixo impacto. Este estudo fornecerá insumos para que os desenvolvedores possam
-ter uma visão geral da aplicabilidade dos padrões de projetos e analisar quais
-técnicas contribuem para seus projetos. Os seguintes objetivos específicos serão alcançados:
+e promovendo a reutilização de componentes, além de permitir o incremento de
+funcionalidades com baixo impacto. Este estudo fornece insumos para que os
+desenvolvedores tenham uma visão geral da aplicabilidade dos padrões de projetos
+e analisem quais técnicas contribuem para seus projetos.
+
+O restante deste artigo é apresentado da seguinte forma: a seção II apresenta o
+método utilizado para execução da pesquisa. A seção III apresenta alguns
+trabalhos relacionados. A seção IV apresenta fundamentos teóricos que irão
+auxiliar no entendimento da pesquisa. A seção V apresenta a execução da
+pesquisa, seguida da seção VI que discorre sobre as conclusões deste artigo,
+destacando suas principais contribuições.
+
+
+
+\section{Metodologia}
+
+Esta pesquisa se caracteriza como experimental pois é selecionado um objeto
+de estudo que será analisado do ponto de vista de métricas bem definidas. Essas
+métricas serão influenciadas pelos experimentos de refatoração embasados na
+revisão da literatura existente sobre orientação a objetos e seus princípios.
+
+Para validar a hipótese apresentada neste trabalho a pesquisa terá uma
+abordagem quantitativa por meio da análise de dados estatistícos de métricas 
+que expresssam atributos de qualidade em software orientado a objetos. O
+conjunto de métricas a serem usadas nessa validação será o elaborado por
+\cite{cksuite}.
+
+Essas medidas serão coletadas por meio de um procedimento experimental em
+laboratório utilizando um processo iterativo-incremental para executar
+refatorações no código do objeto de estudo afim de introduzir o padrão de
+projeto Model-View-Presenter e a cada iteração será feita a coleta das
+métricas. Para executar esse processo será identificado um conjunto de
+funcionalidades que o aplicativo atende, relacionada com a camada de
+apresentação com a qual o usuário interage.
+
+\subsection{Objeto de Estudo}
+
+
+O projeto a ser refatorado será o aplicativo de Contatos do
+android\footnote{\url{https://android.googlesource.com/platform/packages/apps/Contacts}},
+que é um dos aplicativos básicos pré-instalados com o sistema operacional. Este
+projeto é opensource mantido pelo  The Android Open Source Project suportado
+pela Google com contribuições de desenvolvedores do mundo todo.
+
+Os critérios para a escolha do objeto de estudo são:
+
+\begin{enumerate}
+  \item Tamanho/Complexidade - Um projeto muito complexo iria inviabilizar a
+  pesquisa devido ao esforço para fazer a refatoração. Métricas coletadas
+  a partir de projetos simples e triviais não forneceriam dados suficientes para
+  uma análise satisfatória.
+  \item Código Aberto - Além de permitir o acesso ao código fonte sem
+  limitações para a pesquisa, tem a contribuição de vários desenvolvedores com
+  experiência e formação em programação diversificada que se refletem no código fonte.
+  \item Origem do projeto - A escolha de um aplicativo mantido sobre o mesmo
+  gerenciamento que o sistema operacional android foi feita com o intuito de
+  fazer a pesquisa em um código fonte que expressasse as técnicas e práticas de
+  programação difundidas nesse ecossistema.
+\end{enumerate}
+
+\subsubsection{Processo de Experimentos}
+
+
+A Figura \ref{processo_experimentacao} demonstra as atividades do processo de
+experimentação adotado:
+\begin{figure}[!htb]
+	\begin{center}
+	\includegraphics[scale=0.3]{img/processo_experimentacao.png}
+	\end{center}
+	
+	\caption{\label{processo_experimentacao} Processo de Experimentação}
+\end{figure}
+
 
 \begin{itemize}
-\item Estudar os padrões de projeto que podem ser usados para a implementação da
-camada de apresentação de um aplicativo android;
-\item Avaliar os componentes do  framework android, identificando seus papéis e
-responsabilidades de acordo com os padrões estudados, levando  em consideração
-características que podem dificultar a aplicação dos padrões de projeto;
-\item Identificar os impactos nas características de qualidade do aplicativo de acordo
-com o paradigma da Orientação a Objetos, por meio de análise de métricas de
-qualidade de código;
-\item Propor um modelo para implementação da camada de
-apresentação de um aplicativo android utilizando padrões de projetos.
+\item \textbf{Definir versão de referência} - Delimitar um marco do estado do
+código no repositório.
+\item \textbf{Refatoração de funcionalidade} - Esta atividade tem como
+objetivo aplicar os padrões propostos em uma funcionalidade do aplicativo.
+\item \textbf{Construir projeto} - Excutar o processo de construção do
+projeto que inclui a compilação das classes para fazer a coleta das métricas.
+\item \textbf{Coleta de Métricas} - Este passo tem como objetivo fazer a coleta
+das métricas do código que se encontra no repositório a partir de uma revisão
+para fazer a avaliação dos efeitos da refatoração na qualidade do código.
+\item \textbf{Análise dos resultados} - Discussão dos impactos das alterações
+executadas nas métricas.
 \end{itemize}
 
-\subsection{Trabalhos Relacionados}
+
+
+\section{Trabalhos Relacionados}
 
 O uso de um dispositivo móvel permite inovar ao usufrui-lo para atender
 necessidades tanto para computação pessoal e corporativa. Conforme a variedade
@@ -562,110 +614,7 @@ aumenta ao aplicar padrões de projetos, sendo que o principal atributo de
 qualidade aferido é a manutenabilidade. O método utilizado para a execução desta
 pesquisa se baseia no trabalho citado. 
 
-\subsection{Contribuições}
-
-
-Tendo em vista que padrões de projetos descrevem soluções abstratas, este
-trabalho tem como principal contribuição uma interpretação do padrão de projeto
-Model-View-Presenter, proporcionando uma referência prática aplicada ao
-framework android. A diversidade de projetos de software torna difícil inferir
-se as métricas podem ser consideradas um paramêtro para determinar a qualidade.
-O presente trabalho se propõe a avaliar a aderência do padrão MVP a projetos
-android por meio de métricas de qualidade de código.
-
-\subsection{Metodologia}
-
-Esta pesquisa se caracteriza como experimental pois é selecionado um objeto
-de estudo que será analisado do ponto de vista de métricas bem definidas. Essas
-métricas serão influenciadas pelos experimentos de refatoração embasados na
-revisão da literatura existente sobre orientação a objetos e seus princípios.
-
-Para validar a hipótese apresentada neste trabalho a pesquisa terá uma
-abordagem quantitativa por meio da análise de dados estatistícos de métricas 
-que expresssam atributos de qualidade em software orientado a objetos. O
-conjunto de métricas a serem usadas nessa validação será o elaborado por
-\cite{cksuite}.
-
-Essas medidas serão coletadas por meio de um procedimento experimental em
-laboratório utilizando um processo iterativo-incremental para executar
-refatorações no código do objeto de estudo afim de introduzir o padrão de
-projeto Model-View-Presenter e a cada iteração será feita a coleta das
-métricas. Para executar esse processo será identificado um conjunto de
-funcionalidades que o aplicativo atende, relacionada com a camada de
-apresentação com a qual o usuário interage.
-
-\subsubsection{Objeto de Estudo}
-
-
-O projeto a ser refatorado será o aplicativo de Contatos do
-android\footnote{\url{https://android.googlesource.com/platform/packages/apps/Contacts}},
-que é um dos aplicativos básicos pré-instalados com o sistema operacional. Este
-projeto é opensource mantido pelo  The Android Open Source Project suportado
-pela Google com contribuições de desenvolvedores do mundo todo.
-
-Os critérios para a escolha do objeto de estudo são:
-
-\begin{enumerate}
-  \item Tamanho/Complexidade - Um projeto muito complexo iria inviabilizar a
-  pesquisa devido ao esforço para fazer a refatoração. Métricas coletadas
-  a partir de projetos simples e triviais não forneceriam dados suficientes para
-  uma análise satisfatória.
-  \item Código Aberto - Além de permitir o acesso ao código fonte sem
-  limitações para a pesquisa, tem a contribuição de vários desenvolvedores com
-  experiência e formação em programação diversificada que se refletem no código fonte.
-  \item Origem do projeto - A escolha de um aplicativo mantido sobre o mesmo
-  gerenciamento que o sistema operacional android foi feita com o intuito de
-  fazer a pesquisa em um código fonte que expressasse as técnicas e práticas de
-  programação difundidas nesse ecossistema.
-\end{enumerate}
-
-\subsubsection{Processo de Experimentos}
-
-
-A Figura \ref{processo_experimentacao} demonstra as atividades do processo de
-experimentação adotado:
-\begin{figure}[!htb]
-	\begin{center}
-	\includegraphics[scale=0.33]{img/processo_experimentacao.png}
-	\end{center}
-	
-	\caption{\label{processo_experimentacao} Processo de Experimentação}
-\end{figure}
-
-
-\begin{itemize}
-\item \textbf{Definir versão de referência} - Delimitar um marco do estado do
-código no repositório.
-\item \textbf{Refatoração de funcionalidade} - Esta atividade tem como
-objetivo aplicar os padrões propostos em uma funcionalidade do aplicativo.
-\item \textbf{Construir projeto} - Excutar o processo de construção do
-projeto que inclui a compilação das classes para fazer a coleta das métricas.
-\item \textbf{Coleta de Métricas} - Este passo tem como objetivo fazer a coleta
-das métricas do código que se encontra no repositório a partir de uma revisão
-para fazer a avaliação dos efeitos da refatoração na qualidade do código.
-\item \textbf{Análise dos resultados} - Discussão dos impactos das alterações
-executadas nas métricas.
-\end{itemize}
-
-
-\subsection{Organização do Trabalho}
-
-O presente trabalho está estruturado em 4 capítulos dos quais este é o
-Capítulo 1 que apresenta a proposta do trabalho, contexto do problema, a
-motivação para este estudo, os objetivos a serem alcançados e a estrutura do
-trabalho. Também é abordada a metodologia aplicada neste trabalho mostrando o
-objeto de estudo a ser analisado e os passos a serem executados, enfatizando o
-método experimental.
-O Capítulo 2 discorre sobre a fundamentação teórica sobre padrões de projetos,
-métricas de qualidade orientada a objetos e as tecnologias com as quais o objeto
-de estudo foi desenvolvido.
-O Capítulo 3 contém uma análise do objeto de estudo e define como serão feitas
-as implementações e mostra os resultados da execução da pesquisa.
-O Capítulo 4 apresenta a análise final, conclusões do trabalho e sugestões para
-trabalhos futuros.
-
-
-\section{Referencial Teórico}
+\section{Fundamentação Teórica}
 
 \subsection{Princípios e Padrões de Projetos}
 
@@ -760,7 +709,7 @@ levado em consideração somente os métodos que são chamados diretamente.
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.6]{img/pic_rfc.png}
+		\includegraphics[scale=0.5]{img/pic_rfc.png}
 	\end{center}
 	\caption{\label{fig:pic_rfc}Exemplo de avaliação da métrica RFC}
 \end{figure}
@@ -785,7 +734,7 @@ métrica WMC é avaliada em uma classe.
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.6]{img/pic_wmc.png}
+		\includegraphics[scale=0.35]{img/pic_wmc.png}
 	\end{center}
 	\caption{\label{fig:pic_wmc}Exemplo de avaliação da métrica WMC}
 	
@@ -810,7 +759,7 @@ depende.
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.6]{img/pic_cbo.png}
+		\includegraphics[scale=0.5]{img/pic_cbo.png}
 	\end{center}
 	\caption{\label{fig:pic_cbo}Exemplo de avaliação da métrica CBO}
 	
@@ -836,7 +785,7 @@ valor da métrica DIT para a classe ``ClasseZ'' é dois.
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.6]{img/pic_dit.png}
+		\includegraphics[scale=0.5]{img/pic_dit.png}
 	\end{center}
 	\caption{\label{fig:pic_dit}Exemplo de avaliação da métrica DIT}
 	
@@ -851,7 +800,7 @@ comum.
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.8]{img/pic_lcom_ex1.png}
+		\includegraphics[scale=0.5]{img/pic_lcom_ex1.png}
 	\end{center}
 	\caption{\label{fig:pic_lcom_ex1}Exemplo  de avaliação da métrica LCOM}
 	
@@ -878,29 +827,6 @@ nenhum conjunto com algum atributo que seja compartilhado entre os métodos.
 Portanto o LCOM para para a classe ``ClasseA'' é, três conjuntos vazios, menos
 zero conjuntos não vazios, que é igual a, LCOM três.
 
-\begin{figure}[htb]
-	\begin{center}
-		\includegraphics[scale=0.8]{img/pic_lcom_ex2.png}
-	\end{center}
-	\caption{\label{fig:pic_lcom_ex2}Exemplo  de avaliação da métrica LCOM}
-	
-\end{figure}
-
-Outro exemplo é mostrado na figura \ref{fig:pic_lcom_ex2} . Aplicando a mesma
-nomenclatura do exemplo anterior da figura \ref{fig:pic_lcom_ex1} teremos a
-seguinte analise para calcular o valor de LCOM para a classe ``ClasseB'': Dado,
-Ma = \{ Atributo1\}; Mb = \{\}; Mc = \{Atributo1, Atributo2\}. 
-
-\[
-Ma \cap Mb = \{ \},
-Ma \cap Mc = \{ Atributo1 \},
-Mc \cap Mb = \{ \}
-\]
-
-Totalizando dois conjuntos vazios e um conjunto não vazio. Portanto o valor da
-métrica LCOM para a classe ``ClasseB'' é de um conjunto. Podemos concluir que a
-classe ``ClasseB'' é mais coesa que  a classe ``ClasseA''.
-
 \subsubsection{\textbf{Number of Children (NOC)}} Número de subclasses imediatas
 de uma classe analisada. Essa medida é um indicativo de mau uso de herança conforme seu
 valor aumenta e mostra o impacto que uma classe pode ter no sistema requerendo maior
@@ -908,7 +834,7 @@ atenção e testes.
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.6]{img/pic_noc.png}
+		\includegraphics[scale=0.5]{img/pic_noc.png}
 	\end{center}
 	\caption{\label{fig:pic_noc}Exemplo de avaliação da métrica NOC}
 	
@@ -958,8 +884,6 @@ Controller - Interpreta as ações do usuário provenientes de um dispositivo de
 entrada(Teclado, Mouse) alterando estado da view ou do model.
 
 
-
-
 krasner and Pope \cite{krasnerPope1988} descrevem a estrutura do MVC onde a view
 tem seu controller exclusivo mantendo uma dependência cíclica entre ambos. Tanto a View
 quanto o Controller tem referências diretas para o model por meio de atributos
@@ -989,55 +913,12 @@ extender. A Figura \ref{mvc} esclarece a interação entre os componentes.
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.45]{img/mvc.png}
+		\includegraphics[scale=0.30]{img/mvc.png}
 	\end{center}
 	
 	\caption{\label{mvc}Representação dos componentes do MVC}
 \end{figure}
 
-\cite{gof} cita \cite{krasnerPope1988} fazendo uma análise dos
-objetos que compõem o MVC relacionando-os com outros padrões de projeto
-descritos em seu catálogo.
-O desacoplamento entre a View e o Model, somado à propagação das mudanças de
-estado no model para a View e o Controller podem ser
-descritos como uma implementação do padrão Observer. Segundo \cite{gof} o padrão
-Observer ``\ldots Define uma dependência de 1-N entre objetos para quando um
-objeto mudar de estado, todos os seus dependentes são notificados e atualizados
-automaticamente''(tradução livre). \cite{krasnerPope1988} descrevem essa
-estrutura com o conceito de Dependents onde a View e o Controller são
-registrados como dependentes do model. O padrão Observer é composto por uma
-estrutura em que um objeto precisa publicar mudanças em seu estado, detém a
-referência para os objetos a serem notificados. A organização das classes de
-acordo com o que o padrão descreve permite que várias Views possam se atualizar
-dada uma modificação no Model.
-
-A View é composta por vários objetos com a responsabilidade em comum de
-representar parte ou todo o estado do Model. Este é um exemplo do padrão de
-projeto Composite. Segundo \cite{gof} o padrão Composite ``\ldots
-Integra objetos em uma estrutura de árvore para representar uma hierárquia
-parte-todo, deixando clientes tratar objetos individuais e composições de
-objetos uniformemente''(tradução livre).Uma view pode ser constituída por
-sub-views para compor Views complexas. No Composite  um conjunto de componentes
-visuais podem ser tratadas de forma encapsulada onde cada um implementa a
-mesma abstração. 
-
-Segundo \cite{gof} o padrão de projeto Strategy ``\ldots define uma
-família de algorítmos, encapsula cada um, e torna-os substituíveis entre si
-permitindo que variem independentemente dos clientes que o usam''(tradução
-livre). O padrão Strategy define uma abstração cuja as implementações podem ser
-trocadas de acordo com algum critério. Esse conceito pode ser aplicado ao
-Controller que encapsula o algoritmo que vai alterar a View e o Model,
-permitindo sua substituíção, por exemplo, por uma outra implementação que deixa
-de responder às interações com o usuário.
-
-Segundo \cite{krasnerPope1988} o Model ``\ldots pode ser simples como
-um valor numério inteiro (como o modelo de um contador) ou um valor literal
-(como o modelo de um editor de texto), ou pode ser um objeto complexo''(tradução
-livre). O Model pode ser implementado usando o padrão Facade para simplificar
-as interações entre o Controller e o Model. O padrão Facade provê
-uma abstração mais simples e unificada de várias interfaces de um
-subsistema\cite{gof}. Esta forma de interpretar o Model pode ser aplicada
-dependendo da complexidade do domínio que ele representa.
 
 \subsection{Model View Presenter}
 
@@ -1085,7 +966,7 @@ pelo presenter como pode ser observado na Figura~\ref{fig:mvp_passive_view}.
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.45]{img/passive_view.png}
+		\includegraphics[scale=0.30]{img/passive_view.png}
 	\end{center}
 	\caption{\label{fig:mvp_passive_view} MVP - Passive View}
 	
@@ -1099,7 +980,7 @@ figura~\ref{fig:sup_controller}.
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.45]{img/supervising_controller.png}
+		\includegraphics[scale=0.30]{img/supervising_controller.png}
 	\end{center}
 	
 	\caption{\label{fig:sup_controller} MVP - Supervising Controller}
@@ -1214,7 +1095,7 @@ destacado em azul.
 
 \begin{figure*}[htb]
 	\begin{center}
-		\includegraphics[scale=0.40,width=\textwidth]{img/pacotes_contacts.png}
+		\includegraphics[height=8cm,width=\textwidth]{img/pacotes_contacts.png}
 	\end{center}
 	\caption{\label{fig:pacotes_contacts} Diagrama de pacotes do aplicativo de contatos}	
 \end{figure*}
@@ -1228,7 +1109,7 @@ são ilustradas nas figuras \ref{fig:contacts_groups},
 	\centering
 	\begin{minipage}[b]{0.45\linewidth}
 		\begin{center}
-			\includegraphics[scale=0.18]{img/contacts_groups.png}
+			\includegraphics[scale=0.15]{img/contacts_groups.png}
 		\end{center}
 		\caption{\label{fig:contacts_groups} Tela de lista de grupos} 
 		
@@ -1236,7 +1117,7 @@ são ilustradas nas figuras \ref{fig:contacts_groups},
 \quad
 	\begin{minipage}[b]{0.45\linewidth}
 		\begin{center}
-			\includegraphics[scale=0.18]{img/contacts_group_view.png}
+			\includegraphics[scale=0.15]{img/contacts_group_view.png}
 		\end{center}
 		\caption{\label{fig:contacts_groups_view} Tela de visualização de um grupo}
 		 
@@ -1244,7 +1125,7 @@ são ilustradas nas figuras \ref{fig:contacts_groups},
 \quad
 	\begin{minipage}[b]{0.45\linewidth}
 		\begin{center} 
-			\includegraphics[scale=0.18]{img/contacts_edit.png}
+			\includegraphics[scale=0.15]{img/contacts_edit.png}
 		\end{center}
 		\caption{\label{fig:groups_edit} Tela de edição e criação de grupos}
 		 
@@ -1267,10 +1148,9 @@ mostra a figura \ref{fig:classes_group_baseline}.
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.5]{img/classes_group_baseline.png}
+		\includegraphics[scale=0.4]{img/classes_group_baseline.png}
 	\end{center}
 	\caption{\label{fig:classes_group_baseline} Diagrama de pacotes de grupos}   
-	
 \end{figure}
 
 Estas interfaces com o usuário são usadas dentro de Activities que controlam uma
@@ -1597,7 +1477,7 @@ métrica LCOM. Isto indica que a coesão do código melhorou após cada iteraç�
 
 \begin{figure}[!htb]
 	\begin{center}
-		\includegraphics[scale=0.7]{img/lcom.png}
+		\includegraphics[scale=0.5]{img/lcom.png}
 	\end{center}
 	\caption{\label{fig:lcom} Gráfico da métrica LCOM}   
 	
@@ -1635,7 +1515,7 @@ refatoração.
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.4]{img/classes_iteracao3}
+		\includegraphics[scale=0.3]{img/classes_iteracao3}
 	\end{center}
 	\caption{\label{fig:classes_iteracao3} Pacote após refatoração}
 	
@@ -1739,19 +1619,19 @@ esses valores limites para identificar anomalias nas classes e tratar cada caso
 isolado.
 
  
-\subsection{Trabalhos Futuros}
+%\subsection{Trabalhos Futuros}
 
-Existem outros padrões de projetos para o desenvolvimento da camada de
-apresentação de um software que não foram analisados nesse trabalho, a saber: 
-MVVM, MVP-VM, MVPC. Essas variações no padrão MVC surgiram em contextos
-diversificados e podem agregar algum benefício à qualidade do aplicativo.
-Este trabalho não aborda o impacto do padrão MVP em outras métricas de qualidade
-de código derivadas do CK.
-Não foi feita uma avaliação dos impactos na performance do aplicativo devido ao
-uso do padrão MVP. A inclusão de mais objetos interagindo trocando mensagens
-pode depreciar a performance, levando-se em consideração sua execução em
-ambientes mais restritos, como no caso de um aparelho móvel.
-%
+%Existem outros padrões de projetos para o desenvolvimento da camada de
+%apresentação de um software que não foram analisados nesse trabalho, a saber: 
+%MVVM, MVP-VM, MVPC. Essas variações no padrão MVC surgiram em contextos
+%diversificados e podem agregar algum benefício à qualidade do aplicativo.
+%Este trabalho não aborda o impacto do padrão MVP em outras métricas de
+% qualidade de código derivadas do CK.
+%Não foi feita uma avaliação dos impactos na performance do aplicativo devido ao
+%uso do padrão MVP. A inclusão de mais objetos interagindo trocando mensagens
+%pode depreciar a performance, levando-se em consideração sua execução em
+%ambientes mais restritos, como no caso de um aparelho móvel.
+
 
 
 % IEEEtran.cls defaults to using nonbold math in the Abstract.
