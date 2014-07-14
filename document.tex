@@ -415,13 +415,13 @@ for the most varied purposes. To meet this demand is necessary to
 develop applications with good quality at a high level of productivity.
 However, for dealing with applications designed to meet specific needs and with a
 short development cycle, there is little concern with the architecture of
-solution, resulting in products with poor quality. Within the engineering
-there are software design patterns that help in the development of software.
-This work aims to present the application of the design pattern
+solution, resulting in products with poor quality. Within the sotware
+engineering there are design patterns that help in the development of
+software. This work aims to present the application of the design pattern
 Model View Presenter in android application development to increase
 application quality. The effects that this pattern has on the object of study
 are assessed on an object-oriented perspective. The experimental method is
-iteratively applied using the process of incremental refactoring
+iteratively applied using the process of incremental refactoring and
 collecting quality metrics of code to do a quantitative analysis.
 The results show that the application of the design pattern increased the
 cohesion of the code, however, with a small increase in complexity due to the
@@ -429,7 +429,7 @@ inclusion of new components used to divide responsibilities.
 
 
 \noindent
-\textbf{Keywords}: Android. Model View Presenter. Design Patterns.
+\textbf{Keywords}: Android. Model View Presenter. Design Patterns. Metrics.
 
 \end{abstract}
 
@@ -542,7 +542,7 @@ A Figura \ref{processo_experimentacao} demonstra as atividades do processo de
 experimentação adotado:
 \begin{figure}[!htb]
 	\begin{center}
-	\includegraphics[scale=0.3]{img/processo_experimentacao.png}
+	\includegraphics[scale=0.25]{img/processo_experimentacao.png}
 	\end{center}
 	
 	\caption{\label{processo_experimentacao} Processo de Experimentação}
@@ -616,7 +616,7 @@ pesquisa se baseia no trabalho citado.
 
 \section{Fundamentação Teórica}
 
-\subsection{Princípios e Padrões de Projetos}
+\subsection{Padrões de Projetos}
 
 
 Desenvolver software orientado a objetos é um desafio. Criar uma representação
@@ -627,17 +627,6 @@ análise e projeto. Apesar de existirem várias abordagens para se conceber um
 sistema orientado a objetos\cite{evans2004ddd},\cite{gomma11}, um sistema bem
 construído apresenta características fundamentais como alta coesão e
 baixo acoplamento.
-
-A Coesão é uma característica de um componente de software que se refere ao grau
-de relacionamento entres os membros desse componente. No contexto de uma classe,
-é levado em consideração as relações entre os métodos e atributos. Classes com
-coesão baixa demonstram grande complexidade pois os atributos e métodos que não
-se relacionam indicam que a classe tem muitas responsablidades.
-
-O acoplamento descreve as dependências entre componentes. Quanto maior a
-quantidade dessas dependências entre classes, mais complexo ela se torna, pois
-dificulta  alterações na classe. Além disso, o acoplamento aumenta o risco de
-uma classe ser afetada devido à alterações em suas dependências.
 
 Um padrão, dentro do contexto de estudo deste trabalho pode ser definido
 como uma técnica efetiva cuja a sua aplicabilidade é aceita e difundida dentro
@@ -707,20 +696,21 @@ informação\cite{WandWeber}. As métricas são:
 que são executados quando um objeto recebe uma mensagem, incluindo os métodos de outras classes. É
 levado em consideração somente os métodos que são chamados diretamente.
 
-\begin{figure}[htb]
-	\begin{center}
-		\includegraphics[scale=0.5]{img/pic_rfc.png}
-	\end{center}
-	\caption{\label{fig:pic_rfc}Exemplo de avaliação da métrica RFC}
-\end{figure}
+%\begin{figure}[htb]
+%	\begin{center}
+%		\includegraphics[scale=0.5]{img/pic_rfc.png}
+%	\end{center}
+%	\caption{\label{fig:pic_rfc}Exemplo de avaliação da métrica RFC}
+%\end{figure}
 
 
-Na figura \ref{fig:pic_rfc}, a classe de exemplo tem um total de três métodos
-definido nela. A implementação do método ``MetódoA'' chama o método ``MétodoB'',
-o método ``MétodoW'' que é de outra classe referenciada pelo atributo
-``Atributo2'' e o método ``MétodoC''. Assumindo que os métodos ``MétodoB'' e
-``MétodoC'' não contém chamadas a nenhum outro método, o valor da métrica RFC
-para a classe ilustrada é de seis métodos.
+%Na figura \ref{fig:pic_rfc}, a classe de exemplo tem um total de três métodos
+%definido nela. A implementação do método ``MetódoA'' chama o método
+%% ``MétodoB'', o método ``MétodoW'' que é de outra classe referenciada pelo
+% atributo
+%``Atributo2'' e o método ``MétodoC''. Assumindo que os métodos ``MétodoB'' e
+%``MétodoC'' não contém chamadas a nenhum outro método, o valor da métrica RFC
+%para a classe ilustrada é de seis métodos.
 
 \subsubsection{\textbf{Wheighted Methods per Classe (WMC)}} Serve para expressar
 o nível de complexidade de uma classe com base na soma da complexidade dos métodos que ela
@@ -729,20 +719,22 @@ classes filhas que herdarão esses métodos. Também é um indicativo de que a
 classe tem métodos específicos dificultando o seu reuso. A unidade de
 complexidade definida por \cite{cksuite} é o próprio método e não
 considera outros fatores como número de linhas, número de parâmetros ou
-quantidade de estruturas de decisão. A figura~\ref{fig:pic_wmc} ilustra como a
-métrica WMC é avaliada em uma classe.
+quantidade de estruturas de decisão.
 
-\begin{figure}[htb]
-	\begin{center}
-		\includegraphics[scale=0.35]{img/pic_wmc.png}
-	\end{center}
-	\caption{\label{fig:pic_wmc}Exemplo de avaliação da métrica WMC}
-	
-\end{figure}
+% A figura~\ref{fig:pic_wmc} ilustra como a
+%métrica WMC é avaliada em uma classe.
 
-No exemplo da figura~\ref{fig:pic_wmc}, a classe reprensentada tem um total de
-cinco métodos implementados. Seguindo estritamente o que \cite{cksuite}
-definem para a métrica, o valor da métrica WMC para a classe é cinco métodos.
+%\begin{figure}[htb]
+%	\begin{center}
+%		\includegraphics[scale=0.35]{img/pic_wmc.png}
+%	\end{center}
+%	\caption{\label{fig:pic_wmc}Exemplo de avaliação da métrica WMC}
+%	
+%\end{figure}
+
+%No exemplo da figura~\ref{fig:pic_wmc}, a classe reprensentada tem um total de
+%cinco métodos implementados. Seguindo estritamente o que \cite{cksuite}
+%definem para a métrica, o valor da métrica WMC para a classe é cinco métodos.
 
 
 \subsubsection{\textbf{Coupling Bettwen Objects (CBO)}} Em um sistema orientado
@@ -756,19 +748,19 @@ colaterais que ocorrerem ao modificar uma classe altamente acoplada. O valor da
 métrica CBO para uma classe é o número de outras classes que a classe analisada
 depende.
 
+%
+%\begin{figure}[htb]
+%	\begin{center}
+%		\includegraphics[scale=0.5]{img/pic_cbo.png}
+%	\end{center}
+%	\caption{\label{fig:pic_cbo}Exemplo de avaliação da métrica CBO}
+%	
+%\end{figure}
 
-\begin{figure}[htb]
-	\begin{center}
-		\includegraphics[scale=0.5]{img/pic_cbo.png}
-	\end{center}
-	\caption{\label{fig:pic_cbo}Exemplo de avaliação da métrica CBO}
-	
-\end{figure}
-
-A figura \ref{fig:pic_cbo} ilustra um exemplo de acoplamento entre objetos. Um
-classe chamada ``A'' depende das classes ``C'', ``X'' e ``Z''. O
-valor de CBO para a classe ``A" é a somas de todas as suas
-dependências, neste caso totalizando três dependências.
+%A figura \ref{fig:pic_cbo} ilustra um exemplo de acoplamento entre objetos. Um
+%classe chamada ``A'' depende das classes ``C'', ``X'' e ``Z''. O
+%valor de CBO para a classe ``A" é a somas de todas as suas
+%dependências, neste caso totalizando três dependências.
 
 
 \subsubsection{\textbf{Depth Inheritance Tree (DIT)}}  Nível de uma classe na
@@ -776,20 +768,22 @@ hierarquia de herança. Reflete o número máximo de nós  dentro da árvore
 de classes até a raiz, o que aumenta a complexidade conforme a quantidade de
 elementos envolvidos se eleva, diminuindo a previsibilidade do comportamento da
 classe com vários métodos e atributos sendo herdados, principalmente com o uso
-de sobrecarga de métodos. No exemplo da figura \ref{fig:pic_dit} a classe
-``ClasseZ'' tem um relacionamento de herança com a classe ``ClasseT'' que se
-relaciona também por meio de herança com a classe ``Raiz''. A distância entre a
-classe ``ClasseZ'' até a classe ``Raiz'' na hierarquia é de dois nós. Portanto o
-valor da métrica DIT para a classe ``ClasseZ'' é dois.
+de sobrecarga de métodos.
+
+% No exemplo da figura \ref{fig:pic_dit} a classe
+%``ClasseZ'' tem um relacionamento de herança com a classe ``ClasseT'' que se
+%relaciona também por meio de herança com a classe ``Raiz''. A distância entre a
+%classe ``ClasseZ'' até a classe ``Raiz'' na hierarquia é de dois nós. Portanto
+% o valor da métrica DIT para a classe ``ClasseZ'' é dois.
 
 
-\begin{figure}[htb]
-	\begin{center}
-		\includegraphics[scale=0.5]{img/pic_dit.png}
-	\end{center}
-	\caption{\label{fig:pic_dit}Exemplo de avaliação da métrica DIT}
-	
-\end{figure}
+%\begin{figure}[htb]
+%	\begin{center}
+%		\includegraphics[scale=0.5]{img/pic_dit.png}
+%	\end{center}
+%	\caption{\label{fig:pic_dit}Exemplo de avaliação da métrica DIT}
+%	
+%\end{figure}
 
 
 \subsubsection{\textbf{Lack of Cohesion in Methods (LCOM)}} Usado para avaliar a
@@ -798,51 +792,51 @@ O valor dessa métrica é fornecido por meio da quantidade de métodos que não 
 nenhum atributo em comum, menos a quantidade de métodos que tem atributos em
 comum.
 
-\begin{figure}[htb]
-	\begin{center}
-		\includegraphics[scale=0.5]{img/pic_lcom_ex1.png}
-	\end{center}
-	\caption{\label{fig:pic_lcom_ex1}Exemplo  de avaliação da métrica LCOM}
+%\begin{figure}[htb]
+%	\begin{center}
+%		\includegraphics[scale=0.5]{img/pic_lcom_ex1.png}
+%	\end{center}
+%	\caption{\label{fig:pic_lcom_ex1}Exemplo  de avaliação da métrica LCOM}
 	
-\end{figure}
+%\end{figure}
 
-No exemplo da figura \ref{fig:pic_lcom_ex1} a classe ilustrada tem três métodos
-implementados e cada método tem um conjunto de atributos que cada um utiliza.
-O método ``MétodoA'' utiliza o atributo ``Atributo1'' formando o cunjunto Ma =
-\{Atributo1\}, o método ``MétodoB'' não utiliza nenhum atributo formando um
-conjunto vazio Mb = \{\}, e o método ``MetodoC'' referencia o atributo
-``Atributo2'' formando o conjunto Mc = \{Atributo2\}. É necessário descobrir a
-interseção de cada um desses grupos para saber quantos grupos tem atributos em
-comum. A seguir é mostrado o resultado dessa avaliação:
+%No exemplo da figura \ref{fig:pic_lcom_ex1} a classe ilustrada tem três métodos
+%implementados e cada método tem um conjunto de atributos que cada um utiliza.
+%O método ``MétodoA'' utiliza o atributo ``Atributo1'' formando o cunjunto Ma =
+%\{Atributo1\}, o método ``MétodoB'' não utiliza nenhum atributo formando um
+%conjunto vazio Mb = \{\}, e o método ``MetodoC'' referencia o atributo
+%``Atributo2'' formando o conjunto Mc = \{Atributo2\}. É necessário descobrir a
+%interseção de cada um desses grupos para saber quantos grupos tem atributos em
+%comum. A seguir é mostrado o resultado dessa avaliação:
 
-\[
-Ma \cap Mb = \{ \},
-Ma \cap Mc = \{ \},
-Mc \cap Mb = \{ \}
-\]
+%\[
+%Ma \cap Mb = \{ \},
+%Ma \cap Mc = \{ \},
+%Mc \cap Mb = \{ \}
+%\]
 
-Com esses resultados em mãos pode-se calcular o valor de lcom para a classe
-exemplos. O total de conjuntos resultates vazios é três  e não foi identificado
-nenhum conjunto com algum atributo que seja compartilhado entre os métodos.
-Portanto o LCOM para para a classe ``ClasseA'' é, três conjuntos vazios, menos
-zero conjuntos não vazios, que é igual a, LCOM três.
+%Com esses resultados em mãos pode-se calcular o valor de lcom para a classe
+%exemplos. O total de conjuntos resultates vazios é três  e não foi identificado
+%nenhum conjunto com algum atributo que seja compartilhado entre os métodos.
+%Portanto o LCOM para para a classe ``ClasseA'' é, três conjuntos vazios, menos
+%zero conjuntos não vazios, que é igual a, LCOM três.
 
 \subsubsection{\textbf{Number of Children (NOC)}} Número de subclasses imediatas
 de uma classe analisada. Essa medida é um indicativo de mau uso de herança conforme seu
 valor aumenta e mostra o impacto que uma classe pode ter no sistema requerendo maior
 atenção e testes.
 
-\begin{figure}[htb]
-	\begin{center}
-		\includegraphics[scale=0.5]{img/pic_noc.png}
-	\end{center}
-	\caption{\label{fig:pic_noc}Exemplo de avaliação da métrica NOC}
-	
-\end{figure}
+%\begin{figure}[htb]
+%	\begin{center}
+%		\includegraphics[scale=0.5]{img/pic_noc.png}
+%	\end{center}
+%	\caption{\label{fig:pic_noc}Exemplo de avaliação da métrica NOC}
+%	
+%\end{figure}
 
-Na figura \ref{fig:pic_noc} a classe ``ClasseA'' e a classe ``ClasseT'' são as
-únicas classes que tem uma relação de herança direta com a classe ``Raiz'',
-portanto o valor da métrica NOC para a classe ``Raiz'' é  dois.
+%Na figura \ref{fig:pic_noc} a classe ``ClasseA'' e a classe ``ClasseT'' são as
+%únicas classes que tem uma relação de herança direta com a classe ``Raiz'',
+%portanto o valor da métrica NOC para a classe ``Raiz'' é  dois.
 
 
 Todas essas métricas tem uma relação inerente com a coesão e acoplamento dos
@@ -882,38 +876,12 @@ complexas.
 
 Controller - Interpreta as ações do usuário provenientes de um dispositivo de
 entrada(Teclado, Mouse) alterando estado da view ou do model.
-
-
-krasner and Pope \cite{krasnerPope1988} descrevem a estrutura do MVC onde a view
-tem seu controller exclusivo mantendo uma dependência cíclica entre ambos. Tanto a View
-quanto o Controller tem referências diretas para o model por meio de atributos
-de classe, porém, o model não deve conhecer seus respectivos pares de
-View-Controller para promover maior reuso de código e encapsulamento do model.
-As alterações do estado do model são feitas na maioria das vezes pelo controller, e
-o model é responsável por notificar todas as views que o representa para que
-se atualizem refletindo o novo estado. No caso de um model ser usado por vários
-pares de View-Controller as mensagens de notificação de um novo estado do model
-podem ser parametrizadas assim cada view pode verificar se a alteração é de seu
-interesse. 
-
-Segundo \cite{Fowler:2002:PEA} ``\ldots esta separação da
-apresentação e modelo é uma das mais fundamentais heurísticas de bom projeto
-de software''(tradução livre).
-O controller poderia ser o responsável por publicar as alterações no estado do
-model devido sua relação direta com o mesmo, mas em casos onde o model é
-alterado por outro componente que não é um dos controladores que os utilizam, é
-necessário que o model conheça as views que devem ser notificados do novo
-estado. Para que essas alterações de estado sejam propagadas a view e o
-controller são registrados como dependentes de seu model. O padrão é descrito
-levando em consideração as aplicações desenvolvidas em Smalltalk usando
-características espefíficas dessa linguagem de programação que da suporte à
-implementação dos três componentes como por exemplo o gerenciamento dos objetos
-que são dependentes do model definido na classe Object que o model deve
-extender. A Figura \ref{mvc} esclarece a interação entre os componentes.
+ 
+A Figura \ref{mvc} esclarece a interação entre os componentes.
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.30]{img/mvc.png}
+		\includegraphics[scale=0.25]{img/mvc.png}
 	\end{center}
 	
 	\caption{\label{mvc}Representação dos componentes do MVC}
@@ -966,7 +934,7 @@ pelo presenter como pode ser observado na Figura~\ref{fig:mvp_passive_view}.
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.30]{img/passive_view.png}
+		\includegraphics[scale=0.25]{img/passive_view.png}
 	\end{center}
 	\caption{\label{fig:mvp_passive_view} MVP - Passive View}
 	
@@ -980,7 +948,7 @@ figura~\ref{fig:sup_controller}.
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.30]{img/supervising_controller.png}
+		\includegraphics[scale=0.25]{img/supervising_controller.png}
 	\end{center}
 	
 	\caption{\label{fig:sup_controller} MVP - Supervising Controller}
@@ -1061,7 +1029,7 @@ exemplo de uso do CKJM é mostrado a seguir:
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.30]{img/ckjm_run.png}
+		\includegraphics[scale=0.25]{img/ckjm_run.png}
 	\end{center}
 	\caption{\label{fig:ckjm_run} Exemplo de execução do CKJM} 
 	
@@ -1109,7 +1077,7 @@ são ilustradas nas figuras \ref{fig:contacts_groups},
 	\centering
 	\begin{minipage}[b]{0.45\linewidth}
 		\begin{center}
-			\includegraphics[scale=0.15]{img/contacts_groups.png}
+			\includegraphics[scale=0.10]{img/contacts_groups.png}
 		\end{center}
 		\caption{\label{fig:contacts_groups} Tela de lista de grupos} 
 		
@@ -1117,7 +1085,7 @@ são ilustradas nas figuras \ref{fig:contacts_groups},
 \quad
 	\begin{minipage}[b]{0.45\linewidth}
 		\begin{center}
-			\includegraphics[scale=0.15]{img/contacts_group_view.png}
+			\includegraphics[scale=0.10]{img/contacts_group_view.png}
 		\end{center}
 		\caption{\label{fig:contacts_groups_view} Tela de visualização de um grupo}
 		 
@@ -1125,7 +1093,7 @@ são ilustradas nas figuras \ref{fig:contacts_groups},
 \quad
 	\begin{minipage}[b]{0.45\linewidth}
 		\begin{center} 
-			\includegraphics[scale=0.15]{img/contacts_edit.png}
+			\includegraphics[scale=0.10]{img/contacts_edit.png}
 		\end{center}
 		\caption{\label{fig:groups_edit} Tela de edição e criação de grupos}
 		 
@@ -1148,7 +1116,7 @@ mostra a figura \ref{fig:classes_group_baseline}.
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.4]{img/classes_group_baseline.png}
+		\includegraphics[scale=0.3]{img/classes_group_baseline.png}
 	\end{center}
 	\caption{\label{fig:classes_group_baseline} Diagrama de pacotes de grupos}   
 \end{figure}
@@ -1232,25 +1200,8 @@ papel no sistema. É inviável desenvolver um sistema cujas todas as classes
 tenham um único método com a implementação de todas as funcões de uma
 classe. Portanto, não existe um valor ideal para a métrica WMC. Essa métrica
 deve ser analisada levando em consideração o contexto da classe de interesse além da
-complexidade expressa pela quantidade de métodos. 
-
-A possibilidade de reuso de uma classe reduz, pois a grande quantidade de
-métodos indica que ela tem funções muito específicas\cite{cksuite}. Neste caso o
-WMC é um indicador de que é necessário fazer um refatoração para extrair funções comuns a outras partes do
-aplicativo, além do pacote de Groups, como por exemplo funções para exibição de
-dados em uma lista, validação de dados em componentes de texto, entre outros. O
-escopo de atuação do padrão MVP é mais amplo, abrangendo o caso de uso realizado pela
-interface refatorada. Logo, o MVP não tem impacto na reusabilidade.
-
-Os efeitos colaterais em uma classe filha é maior quando é feito alguma
-alteração na classe pai que tenha o número de métodos muito alto\cite{cksuite}.
-Isso dificulta a manutenabilidade e o esforço de testes. Porém, As classes
-refatoradas tem uma função muito específica dentro da aplicação e não são
-extendidas por outras classes. O MVP está relacionado com a separação de
-responsabilidades e sua aplicação não interferiu na hierarquia de classes que
-foram refatoradas.
-A tabela \ref{tab:wmc} e a figura \ref{fig:wmc} mostram os valores dessa
-métrica no projeto.
+complexidade expressa pela quantidade de métodos.  A tabela \ref{tab:wmc} e a
+figura \ref{fig:wmc} mostram os valores dessa métrica no projeto.
 
 
 \begin{table}[!h]
@@ -1272,7 +1223,7 @@ métrica no projeto.
 \begin{figure}[!htb]
 	
 	\begin{center}
-		\includegraphics[scale=0.75]{img/wmc.png}
+		\includegraphics[scale=0.5]{img/wmc.png}
 	\end{center}
 	\caption{\label{fig:wmc} Gráfico da métrica WMC}   
 	
@@ -1285,21 +1236,13 @@ De acordo com o que foi exposto, o MVP não deveria afetar a métrica WMC. Poré
 houve um aumento nos valores dessa métrica . Isso é consequência da divisão de
 responsabilidades entre a View e o Presenter. Antes da refatoração, os métodos
 das classes de View implementavam o acesso a dados, controle dos componentes
-visuais e regras específicas das operações executadas na tela, como por exemplo,
-a atualização de um componente visual quando nenhum dado está disponível para
-exibição. Os métodos da classe de View, afetados pela refatoração, foram
-dividídos em no mínimo dois métodos. Sendo que, o método que permanece na View
-manipula os componentes visuais, enquanto o novo método criado no Presenter faz
-o acesso à camada de Model e implementa as regras de negócio da operação em
-resposta à interação do usuário na View. Como consequência a quantidade de
-métodos aumenta, porém, os métodos tornam-se mais simples pois implementam
-funcões específicas. 
-
-Levando isso em consideração, apesar dos valores de WMC
-terem aumentado, a complexidade diminuiu, pois os métodos estão mais concisos.
-No contexto dessa refatoração, a métrica WMC não pode ser considerada um
-indicador determinante para a avaliação da qualidade do objeto de estudo.
-
+visuais e regras específicas das operações executadas na tela. Os métodos da
+classe de View, afetados pela refatoração, foram dividídos em no mínimo dois
+métodos. Sendo que, o método que permanece na View manipula os componentes
+visuais, enquanto o novo método criado no Presenter faz o acesso à camada de
+Model e implementa as regras de negócio da operação em resposta à interação do
+usuário na View. Como consequência a quantidade de métodos aumenta, porém, os
+métodos tornam-se mais simples pois implementam funcões específicas. 
 
 \subsubsection{NOC}
 
@@ -1308,10 +1251,8 @@ código. Assim como DIT, a métrica NOC é um indicador da influência da classe
 no comportamento das classes filhas o que aumenta o esforço de testes. Quando os
 valores desta métrica estão aberrantes em relação às outras classes, há grande
 chance de que a abstração está sendo usada de forma incorreta. Dado esses cenários, está é um métrica cujos
-seus valores devem ser analisados caso a caso.
-
-Durante o processo de refatoração não foi aplicada herança em nenhuma das
-classes afetadas, portanto, essa métrica permaneceu intacta durante as iterações
+seus valores devem ser analisados caso a caso. Durante o processo de refatoração
+não foi aplicada herança em nenhuma das classes afetadas, portanto, essa métrica permaneceu intacta durante as iterações
 como pode ser observado na tabela \ref{tab:noc}. %e figura~\ref{fig:noc}
 
 \begin{table}[!h]
@@ -1345,11 +1286,9 @@ acima nessa hierarquia. Entretanto, a métrica também indica um potencial reuso
 de código por meio da herança de métodos, isso torna os parâmetros de avaliação
 da métrica dependentes do contexto a ser analisado. O aumento demonstrado na DIT
 se deve ao fato que o CKJM considera a implementação de interface como herança.
-A interface define somente o contrato que a classe deve implementar. Sendo uma
-interface, não há nenhuma implementação que possa interferir no comportamento
-da classe, portanto essa alteração na métrica DIT não deve ser considerada. O
-aumento no valor da métrica é mostrado na tabela~\ref{tab:dit} e
-figura~\ref{fig:dit}
+A interface define somente o contrato que a classe deve implementar, portanto
+essa alteração na métrica DIT não deve ser considerada. O aumento no valor da
+métrica é mostrado na tabela~\ref{tab:dit} e figura~\ref{fig:dit}
 
 \begin{table}[!h]
 	\centering
@@ -1367,7 +1306,7 @@ figura~\ref{fig:dit}
 
 \begin{figure}[!htb]
 	\begin{center}
-		\includegraphics[scale=0.7]{img/dit.png}
+		\includegraphics[scale=0.5]{img/dit.png}
 	\end{center}
 	
 	\caption{\label{fig:dit} Gráfico da métrica DIT}   
@@ -1405,7 +1344,7 @@ acréscimo de duas dependências entre a View e o Presenter. A variação da mé
 
 \begin{figure}[!htb]
 	\begin{center}
-		\includegraphics[scale=0.7]{img/cbo.png}
+		\includegraphics[scale=0.5]{img/cbo.png}
 	\end{center}
 	\caption{\label{fig:cbo} Gráfico da métrica CBO}   
 	
@@ -1437,7 +1376,7 @@ sugere um aumento da complexidade do código conforme é apresentado na tabela \
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.7]{img/rfc.png}
+		\includegraphics[scale=0.5]{img/rfc.png}
 	\end{center}
 	\caption{\label{fig:rfc} Gráfico da métrica RFC}   
 	
@@ -1477,7 +1416,7 @@ métrica LCOM. Isto indica que a coesão do código melhorou após cada iteraç�
 
 \begin{figure}[!htb]
 	\begin{center}
-		\includegraphics[scale=0.5]{img/lcom.png}
+		\includegraphics[scale=0.35]{img/lcom.png}
 	\end{center}
 	\caption{\label{fig:lcom} Gráfico da métrica LCOM}   
 	
@@ -1547,12 +1486,7 @@ simples.
 % colocar imagem de código antes e depois.
 A divisão de responsabilidades também afetou negativamente a métrica RFC, pois
 com o aumento da quantidade de métodos, a troca de mensagens entre componentes
-e com a própria classe aumentaram.  
-
-
-A métrica WMC está relacionada com as métricas DIT e NOC. Como houve pouca
-variação no DIT e nenhuma variação no NOC, o aumento da WMC não tem impacto
-relevante.
+e com a própria classe aumentaram.
 
 Os experimentos demonstraram que a aplicação do padrão MVP promoveu de forma
 significativa maior coesão no aplicativo. Isso é demonstrado nos resultados da
@@ -1582,11 +1516,10 @@ desenvolvimento da camada de apresentação de um sistema.
 O padrão MVP define melhor as responsabilidades dos componentes para
 implementação de interfaces levando em consideração os modelo de programação
 usado no framework android onde as responsabilidades do Controller(definidos no
-padrão MVC) estão implementadas nos próprios componentes visuais.
-
-O padrão MVP foi implementado usando a variação chamada Passive View onde o
-Model fica totalmente isolado da View. Esta variante foi usada pois evitou-se
-fazer alterações em classes correspondentes a camada de Model, devido ao alto
+padrão MVC) estão implementadas nos próprios componentes visuais. O padrão MVP
+foi implementado usando a variação chamada Passive View onde o Model fica
+totalmente isolado da View. Esta variante foi usada pois evitou-se fazer
+alterações em classes correspondentes a camada de Model, devido ao alto
 acoplamento e grande complexidade do aplicativo, dessa forma foi possível evitar
 que a refatoração gerasse algum erro no aplicativo, mantendo-o funcional. A
 maioria das altreções estão presentes nas classes criadas para exercerem o papel
