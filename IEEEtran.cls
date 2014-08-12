@@ -1651,8 +1651,8 @@
 \def\refname{References}
 \def\indexname{Index}
 \def\figurename{Fig.}
-\def\tablename{TABLE}
-\@IEEEcompsocconfonly{\def\figurename{Figure}\def\tablename{Table}}
+\def\tablename{TABELA}
+\@IEEEcompsocconfonly{\def\figurename{Figure}\def\tablename{Tabela}}
 \def\partname{Part}
 \def\appendixname{Appendix}
 \def\abstractname{Abstract}

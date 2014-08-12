@@ -359,13 +359,13 @@
 % author names and affiliations
 % use a multiple column layout for up to three different
 % affiliations
-\author{\IEEEauthorblockN{Diego L. Freitas}
-\IEEEauthorblockA{Departamento de Software e Hardware\\
+\author{\IEEEauthorblockN{Diego L. de Freitas}
+\IEEEauthorblockA{
 Fundação Desembargador Paulo Feitoza (FPF-Tech)\\
 Manaus, Brazil\\
 Email: diego.freitas@fpf.br}
 \and
-\IEEEauthorblockN{Danny Lopes}
+\IEEEauthorblockN{Danny de S. Lopes}
 \IEEEauthorblockA{FUCAPI - Departamento de Tecnologia\\
 Manaus, Brazil\\
 Email: danny.lopes@fucapi.br}
@@ -409,23 +409,23 @@ Email: danny.lopes@fucapi.br}
 \begin{abstract}
 
 The Android platform has been adopted by several vendors of smartphones and
-tablets promoting a comprehensive dissemination of the operating system.
-Formed a large market to be exploited for application delivery
-for the most varied purposes. To meet this demand is necessary to
+tablets promoting a comprehensive dissemination of the operating system,
+building a huge market to be exploited for application development
+for the most varied purposes. To meet this demand it is necessary to
 develop applications with good quality at a high level of productivity.
 However, for dealing with applications designed to meet specific needs and with a
 short development cycle, there is little concern with the architecture of
 solution, resulting in products with poor quality. Within the sotware
-engineering there are design patterns that help in the development of
-software. This work aims to present the application of the design pattern
-Model View Presenter in android application development to increase
-application quality. The effects that this pattern has on the object of study
-are assessed on an object-oriented perspective. The experimental method is
-iteratively applied using the process of incremental refactoring and
-collecting quality metrics of code to do a quantitative analysis.
-The results show that the application of the design pattern increased the
-cohesion of the code, however, with a small increase in complexity due to the
-inclusion of new components used to divide responsibilities.
+engineering there are design patterns that help in the software development.
+This paper present the application of the design pattern Model View
+Presenter in Android application development to increase application quality.
+The effects that this pattern has on the object of study are assessed on an
+object-oriented perspective. The experimental method is iteratively applied
+using the process of incremental refactoring and collecting quality metrics of
+code to do a quantitative analysis. The results show that the application of the
+design pattern increased the cohesion of the code, however, with a small
+increase in complexity due to the inclusion of new components used to divide
+responsibilities.
 
 
 \noindent
@@ -438,41 +438,41 @@ inclusion of new components used to divide responsibilities.
 Segundo \cite{idc} o mercado de dispositivos móveis ultrapassou a marca de mais de um
 bilhão de aparelhos vendidos em 2013. A plataforma Android é a líder
 de mercado dominando 78\% desse universo com mais de 226.1 milhões de
-Smartphones produzidos e embarcados com android no último quadrimestre de 2013.
+Smartphones produzidos e embarcados com Android no último quadrimestre de 2013.
 Baseado nesses dados é possível concluir que existe uma demanda latente no
 desenvolvimento de novos aplicativos que agreguem valor à esta plataforma.
 
 Para produzir aplicativos de qualidade é necessário aplicar boas práticas de
 desenvolvimento de software. Levando-se em consideração que a linguagem de
-programação usada para o desenvolvimento na plataforma android é Java, é
+programação usada para o desenvolvimento na plataforma Android é Java, é
 natural que se aplique as práticas definidas pelos princípios de projeto
 orientado a objetos. Tais  princípios guiam o desenvolvedor na definição da
 estrutura interna do software, afetando diretamente características  de
-qualidade como manutenabilidade, performance e outras\cite{tempero-di}.
-
-Os padrões de projeto são aplicados na engenharia de software como forma de
-reproduzir  soluções  para problemas recorrentes melhorando a manutenabilidade e
-o reuso de componentes de software\cite{gof}.O uso de padrões de projetos
-é um meio de aplicar esses princípios.
+qualidade como manutenabilidade, performance e outras\cite{tempero-di}. Os
+padrões de projeto são aplicados na engenharia de software como forma de
+reproduzir  soluções  para problemas recorrentes melhorando a manutenabilidade
+e o reuso de componentes de software\cite{gof}.O uso de padrões de projetos é
+um meio de aplicar esses princípios.
 
 Boas práticas de engenharia de software promovem o desenvolvimento dos
 artefatos que constituem o sistema de forma coesa. Os conjuntos desses artefatos
 podem ser classificados de acordo com suas responsabilidades, surgindo
 uma divisão clara em camadas. Um sistema pode ter diversas camadas, responsáveis
 por acesso a um banco de dados, comunicação com serviços externos, encapsular
-regras de negócios. Uma dessas camadas que constitui um aplicativo android é a
+regras de negócios. Uma dessas camadas que constitui um aplicativo Android é a
 camada de apresentação ou interface com o usuário.
  
 Segundo \cite{pressman}, ``A interface com o usuário pode ser considerada
 o elemento mais importante de um sistema ou produto baseado em computador``.
 Dada a importância da camada de apresentação, este trabalho se concentra no uso
-de uso de padrões de projeto para desenvolvimento da camada de apresentação de aplicativos android.
+de padrões de projeto para desenvolvimento da camada de apresentação de
+aplicativos Android.
 
 Dado que existem uma vasta diversidade de padrões de projeto a serem aplicados
 no desenvolvimento de software, qual padrão de projeto é aplicável para o
-desenvolvimento da camada de apresentação de aplicativos android para melhorar a
+desenvolvimento da camada de apresentação de aplicativos Android para melhorar a
 qualidade do produto final?. Tendo esta questão como como hipótese, este
-trabalho apresenta um estudo sobre a arquitetura de aplicativos android com o
+trabalho apresenta um estudo sobre a arquitetura de aplicativos Android com o
 propósito de melhorar a qualidade desses softwares, causando uma redução nos
 riscos relacionados às mudanças que acontecem durante o ciclo de desenvolvimento
 e promovendo a reutilização de componentes, além de permitir o incremento de
@@ -500,12 +500,10 @@ Para validar a hipótese apresentada neste trabalho a pesquisa terá uma
 abordagem quantitativa por meio da análise de dados estatistícos de métricas 
 que expresssam atributos de qualidade em software orientado a objetos. O
 conjunto de métricas a serem usadas nessa validação será o elaborado por
-\cite{cksuite}.
-
-Essas medidas serão coletadas por meio de um procedimento experimental em
-laboratório utilizando um processo iterativo-incremental para executar
-refatorações no código do objeto de estudo afim de introduzir o padrão de
-projeto Model-View-Presenter e a cada iteração será feita a coleta das
+\cite{cksuite}. Essas medidas serão coletadas por meio de um procedimento
+experimental em laboratório utilizando um processo iterativo-incremental para
+executar refatorações no código do objeto de estudo afim de introduzir o padrão
+de projeto Model View Presenter e a cada iteração será feita a coleta das
 métricas. Para executar esse processo será identificado um conjunto de
 funcionalidades que o aplicativo atende, relacionada com a camada de
 apresentação com a qual o usuário interage.
@@ -514,7 +512,7 @@ apresentação com a qual o usuário interage.
 
 
 O projeto a ser refatorado será o aplicativo de Contatos do
-android\footnote{\url{https://android.googlesource.com/platform/packages/apps/Contacts}},
+Android\footnote{\url{https://android.googlesource.com/platform/packages/apps/Contacts}},
 que é um dos aplicativos básicos pré-instalados com o sistema operacional. Este
 projeto é opensource mantido pelo  The Android Open Source Project suportado
 pela Google com contribuições de desenvolvedores do mundo todo.
@@ -530,24 +528,23 @@ Os critérios para a escolha do objeto de estudo são:
   limitações para a pesquisa, tem a contribuição de vários desenvolvedores com
   experiência e formação em programação diversificada que se refletem no código fonte.
   \item Origem do projeto - A escolha de um aplicativo mantido sobre o mesmo
-  gerenciamento que o sistema operacional android foi feita com o intuito de
+  gerenciamento que o sistema operacional Android foi feita com o intuito de
   fazer a pesquisa em um código fonte que expressasse as técnicas e práticas de
   programação difundidas nesse ecossistema.
 \end{enumerate}
 
-\subsubsection{Processo de Experimentos}
+\subsection{Processo de Experimentos}
 
 
 A Figura \ref{processo_experimentacao} demonstra as atividades do processo de
 experimentação adotado:
 \begin{figure}[!htb]
 	\begin{center}
-	\includegraphics[scale=0.25]{img/processo_experimentacao.png}
+	\includegraphics[scale=0.35]{img/processo_experimentacao.png}
 	\end{center}
 	
 	\caption{\label{processo_experimentacao} Processo de Experimentação}
 \end{figure}
-
 
 \begin{itemize}
 \item \textbf{Definir versão de referência} - Delimitar um marco do estado do
@@ -580,7 +577,7 @@ contexto corporativo que é usado para consultar dados a partir de um banco de
 dados central.
 
 Não foi encontrado na literatura disponível, referências sobre a aplicação do
-MVP para desenvolvimento de aplicativos android. Outros trabalhos mostram a
+MVP para desenvolvimento de aplicativos Android. Outros trabalhos mostram a
 aplica- ção do padrão em outros contextos e plataformas  \cite{presenterfirst},
 \cite{yangmvp}. Esses trabalhos enfatizam que o MVP melhora a
 testabilidade, que é uma característica de qualidade de software.
@@ -841,7 +838,7 @@ atenção e testes.
 
 Todas essas métricas tem uma relação inerente com a coesão e acoplamento dos
 objetos, sendo uma forma confiável para a análise da qualidade em sistemas
-orientados a objetos. Os aplicativos desenvolvidos para a plataforma android são
+orientados a objetos. Os aplicativos desenvolvidos para a plataforma Android são
 escritos usando a linguagem de programação Java que emprega esse paradigma de
 desenvolvimento, o que justifica o uso das métricas de \cite{cksuite} para
 validação dos projetos orientados a objetos.
@@ -961,12 +958,12 @@ mediação do Model e a View por parte do Presenter.
 
 \subsection{Framework Android}
  
-O android é uma plataforma baseado no linux mantido pela Google para
+O Android é uma plataforma baseado no linux mantido pela Google para
 ser embarcado em dispositivos podendo ser aplicado em carros, televisão, placas
 controladoras mas seu destaque é a utilização em smartphones e
 tablets, que é o foco deste trabalho. A plataforma é constituída por API's e
 frameworks tendo em sua base o sistema operacional e seus drivers seguido da
-máquina virtual que executa os aplicativos android e bibliotecas auxiliares e
+máquina virtual que executa os aplicativos Android e bibliotecas auxiliares e
 aplicativos básicos. %como é demonstrado na figura \ref{android_stack}.
 
 %\begin{figure}[htb]
@@ -1016,7 +1013,7 @@ Github\footnote{\url{https://github.com/diegofreitas/platform_packages_apps_cont
 onde será feito o gerenciamento das versões de cada iteração.
 As ferramentas utilizadas para a refatoração serão a IDE Eclipse(Juno) com
 plugin ADT v21 para facilitar a edição do código e ferramentas de construção
-do projeto existentes no próprio repositório do android, tendo em vista que todo
+do projeto existentes no próprio repositório do Android, tendo em vista que todo
 o processo de compilação e empacotamento não visa ser usado em uma IDE.
 Para realizar a coleta das métricas é necessário que a ferramenta analise código
 java e contemple todas as métricas descritas na seção \ref{sec:metrics}. O
@@ -1416,7 +1413,7 @@ métrica LCOM. Isto indica que a coesão do código melhorou após cada iteraç�
 
 \begin{figure}[!htb]
 	\begin{center}
-		\includegraphics[scale=0.35]{img/lcom.png}
+		\includegraphics[scale=0.5]{img/lcom.png}
 	\end{center}
 	\caption{\label{fig:lcom} Gráfico da métrica LCOM}   
 	
@@ -1430,9 +1427,9 @@ métrica LCOM. Isto indica que a coesão do código melhorou após cada iteraç�
 
 
 %CBO
-As classes destinadas à implementação da interface no framework android fornecem
+As classes destinadas à implementação da interface no framework Android fornecem
 acesso a recursos que servem para implementação de responsabilidades não
-relacionadas com a interface. Essa característica do framework android leva à
+relacionadas com a interface. Essa característica do framework Android leva à
 implementação da camada de View com diversas responsabilidades que não são
 inerentes à interação com o usuário. Isso dificultou a refatoração, pois as
 classes que exercem o papel de Presenter necessitam interagir com as classes de
@@ -1482,16 +1479,13 @@ Tendo em vista que o método foi usado como unidade para calcular o WMC, essa
 métrica aumentou ao aplicar o padrão MVP, pois mais métodos foram criados. A
 métrica WMC mostra a complexidade de uma classe, mas apesar do aumento nos
 valores, a complexidade diminuiu, ao ser usado a implementação com métodos mais
-simples.
-% colocar imagem de código antes e depois.
-A divisão de responsabilidades também afetou negativamente a métrica RFC, pois
-com o aumento da quantidade de métodos, a troca de mensagens entre componentes
-e com a própria classe aumentaram.
-
-Os experimentos demonstraram que a aplicação do padrão MVP promoveu de forma
-significativa maior coesão no aplicativo. Isso é demonstrado nos resultados da
-métrica LCOM que foi a mais afetada pelo uso do padrão MVP no projeto como pode
-ser observado na figura \ref{fig:allmetrics}.
+simples. A divisão de responsabilidades também afetou negativamente a métrica
+RFC, pois com o aumento da quantidade de métodos, a troca de mensagens entre
+componentes e com a própria classe aumentaram. Os experimentos demonstraram que
+a aplicação do padrão MVP promoveu de forma significativa maior coesão no
+aplicativo. Isso é demonstrado nos resultados da métrica LCOM que foi a mais
+afetada pelo uso do padrão MVP no projeto como pode ser observado na figura
+\ref{fig:allmetrics}.
 
 \begin{figure}[htb]
 	\includegraphics[scale=0.55]{img/allmetrics}
@@ -1515,25 +1509,24 @@ Model View Presenter mostrando em que contextos cada um se aplica para o
 desenvolvimento da camada de apresentação de um sistema.
 O padrão MVP define melhor as responsabilidades dos componentes para
 implementação de interfaces levando em consideração os modelo de programação
-usado no framework android onde as responsabilidades do Controller(definidos no
+usado no framework Android onde as responsabilidades do Controller(definidos no
 padrão MVC) estão implementadas nos próprios componentes visuais. O padrão MVP
 foi implementado usando a variação chamada Passive View onde o Model fica
 totalmente isolado da View. Esta variante foi usada pois evitou-se fazer
 alterações em classes correspondentes a camada de Model, devido ao alto
 acoplamento e grande complexidade do aplicativo, dessa forma foi possível evitar
 que a refatoração gerasse algum erro no aplicativo, mantendo-o funcional. A
-maioria das altreções estão presentes nas classes criadas para exercerem o papel
+maioria das altações estão presentes nas classes criadas para exercerem o papel
 de Presenter.
 
 As classes de View selecionadas para a refatoração extendem a classe Fragment.
 A classe Fragment é usada para criar agrupamentos de componentes visuais que
 possam ser reutilizados em outras partes do aplicativo. O uso da classe
 Fragment foi mantido e parte das implementações presentes nessas classes foram
-delegadas para as classes de Presenter correspondentes.
-
-As métricas descritas por \cite{cksuite} foram usadas para avaliar os
-impactos na qualidade do aplicativo após a refatoração usanddo o padrão MVP. Foi
-usado o projeto CKJM para coletar os dados para fazer a análise.
+delegadas para as classes de Presenter correspondentes. As métricas descritas
+por \cite{cksuite} foram usadas para avaliar os impactos na qualidade do
+aplicativo após a refatoração usanddo o padrão MVP. Foi usado o projeto CKJM
+para coletar os dados para fazer a análise.
 
 Conforme um software é desenvolvido, novas classes e troca de mensagens são
 implementadas afetando negativamente as métricas WMC, RFC e CBO. Não é possível
